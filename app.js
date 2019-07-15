@@ -4,15 +4,13 @@ const weather = new Weather('awsim', 'eg');
 const ui = new UI();
 
 //Get Weather on DOM Load
-document.addEventListener('DOMContentLoad', getWeather);
+document.addEventListener('DOMContentLoaded', getWeather);
 
 function getWeather() {
-  
+    weather.getWeather()
+    .then(result => {
+    
+        ui.paint(result);
+    })
+    .catch(err => console.log(err));
 }
-weather.getWeather()
-.then(result => {
-
-    console.log(result);
-    ui.paint(result);
-})
-.catch(err => console.log(err));

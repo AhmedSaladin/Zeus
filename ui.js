@@ -19,6 +19,6 @@ class UI {
       this.humidity.textContent = `Relative Humidity: ${weather.current.humidity} %`;
       this.feelsLike.textContent = `Feels Like: ${weather.current.feelslike_c} C`;
       this.pressure.textContent = `Pressure: ${weather.current.pressure_mb} mb`;
-      this.wind.textContent = `Wind: ${weather.current.wind_kph} kph, Wind Direction is "${weather.current.wind_dir}" With Degree(${weather.current.wind_degree})  `;
+      this.wind.textContent = `Wind Speed: ${weather.current.wind_kph} kph, with degree ${weather.current.wind_degree}° from "${weather.current.wind_dir}"`;
     }
   }

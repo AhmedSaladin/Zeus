@@ -8,6 +8,7 @@ class UI {
       this.humidity = document.getElementById('w-humidity');
       this.feelsLike = document.getElementById('w-feels-like');
       this.wind = document.getElementById('w-wind');
+      this.pressure = document.getElementById('w-pressure');
     }
   
     paint(weather) {
@@ -17,6 +18,7 @@ class UI {
       this.icon.setAttribute('src', weather.current.condition.icon);
       this.humidity.textContent = `Relative Humidity: ${weather.current.humidity} %`;
       this.feelsLike.textContent = `Feels Like: ${weather.current.feelslike_c} C`;
-      this.wind.textContent = `Wind: ${weather.current.wind_kph} khp`;
+      this.pressure.textContent = `Pressure: ${weather.current.pressure_mb} mb`;
+      this.wind.textContent = `Wind: ${weather.current.wind_kph} kph, Wind Direction is "${weather.current.wind_dir}" With Degree(${weather.current.wind_degree})  `;
     }
   }

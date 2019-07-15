@@ -1,14 +1,14 @@
 class Weather {
-  constructor(city, countryCode) {
+  constructor(city, country) {
     this.apiKey = '49fbf8d48aa14b3d930123820191507';
     this.city = city;
-    this.countryCode = countryCode;
+    this.country = country;
   }
 
   // Fetch weather from API
   async getWeather() {
 
-    const response = await fetch(`https://api.apixu.com/v1/current.json?key=${this.apiKey}&q=${this.city},${this.countryCode}`)
+    const response = await fetch(`https://api.apixu.com/v1/current.json?key=${this.apiKey}&q=${this.city},${this.country}`)
 
     const responseData = await response.json();
 
@@ -17,8 +17,8 @@ class Weather {
   }
 
   // Change weather location
-  changeLocation(city, countryCode) {
+  changeLocation(city, country) {
     this.city = city;
-    this.countryCode = countryCode;
+    this.countryCode = country;
   }
 }

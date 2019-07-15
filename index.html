@@ -1,78 +1,68 @@
-<html lang="en">
-
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://bootswatch.com/4/cerulean/bootstrap.min.css" rel="stylesheet">
-    <title>Weather</title>
-</head>
-
-<body>
+    <title>WeatherJS</title>
+  </head>
+  <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded">
-                <h1 id="w-location"></h1>
-                <h3 class="text-dark" id="w-desc"></h3>
-                <h3 id="w-string"></h3>
-                <img id="w-icon">
-                <ul class="list-group mt-3" id="w-details">
-                    <li class="list-group-item" id="w-humidity"></li>
-                    <li class="list-group-item" id="w-dewpoint"></li>
-                    <li class="list-group-item" id="w-feels-like"></li>
-                    <li class="list-group-item" id="w-wind"></li>
-                </ul>
-                <hr>
-                <button class="btn btn-primary" type="button" data-target="#locModal" data-toggle="modal">
-                    Change Location
-                </button>
-            </div>
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded">
+          <h1 id="w-location"></h1>
+          <h3 class="text-dark" id="w-desc"></h3>
+          <h3 id="w-string"></h3>
+          <img id="w-icon">
+          <ul class="list-group mt-3" id="w-details">
+            <li class="list-group-item" id="w-humidity"></li>
+            <li class="list-group-item" id="w-feels-like"></li>
+            <li class="list-group-item" id="w-wind"></li>
+          </ul>
+          <hr>
+          <button class="btn btn-primary" type="button" data-target="#locModal" data-toggle="modal">
+              Change Location
+            </button>
         </div>
+      </div>
     </div>
-
+  
     <!-- Modal -->
-    <div tabindex="-1" class="modal fade" id="locModal" role="dialog" aria-hidden="true"
-        aria-labelledby="locModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="locModalLabel">Choose Location</h5>
-                    <button class="close" aria-label="Close" type="button" data-dismiss="modal">
-                        <span aria-hidden="true">×</span>
-                    </button>
+  <div tabindex="-1" class="modal fade" id="locModal" role="dialog" aria-hidden="true" aria-labelledby="locModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="locModalLabel">Choose Location</h5>
+            <button class="close" aria-label="Close" type="button" data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="w-form">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input class="form-control" id="city" type="text">
+              </div>
+              <div class="form-group">
+                  <label for="state">State</label>
+                  <input class="form-control" id="state" type="text">
                 </div>
-                <div class="modal-body">
-                    <form id="w-form">
-                        <div class="form-group">
-                            <label for="city">City</label>
-                            <input class="form-control" id="city" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label for="state">State</label>
-                            <input class="form-control" id="state" type="text">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
-                    <button class="btn btn-primary" id="w-change-btn" type="button">Save changes</button>
-                </div>
-            </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" id="w-change-btn" type="button">Save changes</button>
+          </div>
         </div>
+      </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" crossorigin="anonymous"
-        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" crossorigin="anonymous"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"></script>
-
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" crossorigin="anonymous" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"></script>
+  
     <script src="storage.js"></script>
     <script src="weather.js"></script>
     <script src="ui.js"></script>
     <script src="app.js"></script>
-
-</body>
-
-</html>
+  
+  </body></html>

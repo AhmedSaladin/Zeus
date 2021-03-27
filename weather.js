@@ -7,9 +7,14 @@ class Weather {
 
   // Fetch weather from API
   async getWeather() {
-    const response = await fetch(`http://api.weatherstack.com/current?access_key=${this.apiKey}&query=${this.city},${this.country}`, { mode: 'cors' })
-
-    const responseData = await response.json();
+    const response = await fetch(`
+    http://api.weatherstack.com/current?access_key=${this.apiKey}&query=${this.city},${this.country}`,
+      {
+        mode: 'cors',
+        credentials: 'same-origin'
+      })
+      const responseData = await response.json();
+      console.log(responseData)
 
     return responseData;
 

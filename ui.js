@@ -13,9 +13,9 @@ class UI {
   
     paint(weather) {
       this.location.textContent = `${weather.location.name}, ${weather.location.country}`;
-      this.desc.textContent = weather.current.weather_descriptions[0];
+      this.desc.textContent = weather.current.weather_descriptions;
       this.string.textContent = `${weather.current.temperature} C`;
-      this.icon.setAttribute('src', weather.current.weather_icons[0]);
+      this.icon.setAttribute('src', weather.current.weather_icons);
       this.humidity.textContent = `Relative Humidity: ${weather.current.humidity} %`;
       this.feelsLike.textContent = `Feels Like: ${weather.current.feelslike} C`;
       this.pressure.textContent = `Pressure: ${weather.current.pressure} mb`;

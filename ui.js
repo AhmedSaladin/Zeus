@@ -13,12 +13,12 @@ class UI {
   
     paint(weather) {
       this.location.textContent = `${weather.location.name}, ${weather.location.country}`;
-      this.desc.textContent = weather.current.weather_descriptions;
-      this.string.textContent = `${weather.current.temperature} C`;
-      this.icon.setAttribute('src', weather.current.weather_icons);
+      this.desc.textContent = weather.current.condition.text;
+      this.string.textContent = `${weather.current.temp_c} C`;
+      this.icon.setAttribute('src', `https:${weather.current.condition.icon}`);
       this.humidity.textContent = `Relative Humidity: ${weather.current.humidity} %`;
-      this.feelsLike.textContent = `Feels Like: ${weather.current.feelslike} C`;
-      this.pressure.textContent = `Pressure: ${weather.current.pressure} mb`;
-      this.wind.textContent = `Wind Speed: ${weather.current.wind_speed} kph, with degree ${weather.current.wind_degree}° from "${weather.current.wind_dir}"`;
+      this.feelsLike.textContent = `Feels Like: ${weather.current.feelslike_c} C`;
+      this.pressure.textContent = `Pressure: ${weather.current.pressure_mb} mb`;
+      this.wind.textContent = `Wind Speed: ${weather.current.wind_kph} kph, with degree ${weather.current.wind_degree}° from "${weather.current.wind_dir}"`;
     }
   }

@@ -1,6 +1,6 @@
 class Weather {
   constructor(city, country) {
-    this.apiKey = '49fbf8d48aa14b3d930123820191507';
+    this.apiKey ='3b132185944915881b22aef3bd9e2221';
     this.city = city;
     this.country = country;
   }
@@ -8,9 +8,10 @@ class Weather {
   // Fetch weather from API
   async getWeather() {
 
-    const response = await fetch(`https://api.apixu.com/v1/current.json?key=${this.apiKey}&q=${this.city},${this.country}`)
+    const response = await fetch(`http://api.weatherstack.com/current?access_key=${this.apiKey}&query=${this.city},${this.country}`)
 
     const responseData = await response.json();
+    console.log(responseData);
 
     return responseData;
 
